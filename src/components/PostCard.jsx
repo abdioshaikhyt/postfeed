@@ -5,7 +5,7 @@ import { formatUps } from "../utils/formatNumbers";
 function PostCard({id, title, author, subreddit, createdAt, ups, numComments, thumbnail, permalink}) {
     
     return (
-        
+        <Link to={permalink}>
         <article>
             <div>
             <span className="vote-btn-up">
@@ -28,6 +28,7 @@ function PostCard({id, title, author, subreddit, createdAt, ups, numComments, th
                 <p><span><FiMessageSquare aria-hidden="true"></FiMessageSquare></span> {numComments === 1 ? `${formatUps(numComments)} comment`: `${formatUps(numComments)} comments` }</p>
             </div>
         </article>
+        </Link>
     );
 }
 
