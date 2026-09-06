@@ -12,7 +12,10 @@ const initialState = {
 
 // no auth — reddit's .json trick works on any subreddit/sort URL
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async({subreddit, sort }) => {
-    const response = await fetch(`${REDDIT_BASE}/r/${subreddit}/${sort}.json`);
+    const response = await fetch(`https://corsproxy.io/?url=${REDDIT_BASE}/r/${subreddit}/${sort}.json`);
+    if(!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+    }
     const data = await response.json();
     return data;
 })
