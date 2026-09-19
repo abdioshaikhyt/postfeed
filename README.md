@@ -85,12 +85,14 @@ Task tracking and sprint planning is done in Jira, organised into epics matching
 ## Out of Scope
 
 - OAuth login, voting, commenting, or posting (Reddit's JSON API is read-only)
+- Live Reddit data. Reddit deprecated its unauthenticated `.json` API in May 2026 and it now returns `401`. The `prefs/apps` registration flow is also silently broken (the captcha passes but nothing submits), and a formal Data API access request submitted on 16 Sep 2026 was rejected with no actionable feedback. Mock data (`mockPosts.js` / `mockComments.js`) is the committed data source for the remainder of the build.
 - Custom domain
 - User accounts / saved posts
 - Real-time updates
 
 ## Future Work
 
+- Live Reddit data integration. If API access is ever granted, only the `fetchPosts` thunk in `postsSlice.js` needs updating. Nothing else in the app has to change.
 - OAuth-based login to support voting, commenting, and posting
 - Progressive Web App support (installable, offline-friendly)
 - Custom domain
