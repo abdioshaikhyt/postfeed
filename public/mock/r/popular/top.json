@@ -1,0 +1,84 @@
+{
+  "data": {
+    "children": [
+      {
+        "data": {
+          "id": "1jkl89",
+          "title": "Director confirms sequel is officially in development",
+          "author": "newsreel",
+          "subreddit": "movies",
+          "created_utc": 1789841049,
+          "ups": 6100,
+          "num_comments": 900,
+          "thumbnail": "/mock/thumb.svg",
+          "permalink": "/r/movies/comments/1jkl89/director_confirms_sequel_is_officially_in/"
+        }
+      },
+      {
+        "data": {
+          "id": "1abc23",
+          "title": "Reddit's JSON API just got a lot friendlier for side projects",
+          "author": "devwatcher",
+          "subreddit": "technology",
+          "created_utc": 1789837749,
+          "ups": 3100,
+          "num_comments": 245,
+          "thumbnail": "/mock/thumb.svg",
+          "permalink": "/r/technology/comments/1abc23/reddits_json_api_just_got_a_lot_friendlier/"
+        }
+      },
+      {
+        "data": {
+          "id": "1mno12",
+          "title": "What's a small thing that instantly improved your life?",
+          "author": "askerofthings",
+          "subreddit": "popular",
+          "created_utc": 1789828749,
+          "ups": 2200,
+          "num_comments": 1500,
+          "thumbnail": null,
+          "permalink": "/r/popular/comments/1mno12/whats_a_small_thing_that_instantly_improved/"
+        }
+      },
+      {
+        "data": {
+          "id": "1pqr34",
+          "title": "New browser feature blocks trackers by default",
+          "author": "privacynerd",
+          "subreddit": "technology",
+          "created_utc": 1789838949,
+          "ups": 1800,
+          "num_comments": 310,
+          "thumbnail": "/mock/thumb.svg",
+          "permalink": "/r/technology/comments/1pqr34/new_browser_feature_blocks_trackers_by_default/"
+        }
+      },
+      {
+        "data": {
+          "id": "1def45",
+          "title": "Finally beat the boss I've been stuck on for two weeks",
+          "author": "grindking",
+          "subreddit": "gaming",
+          "created_utc": 1789818849,
+          "ups": 892,
+          "num_comments": 178,
+          "thumbnail": "/mock/thumb.svg",
+          "permalink": "/r/gaming/comments/1def45/finally_beat_the_boss_ive_been_stuck_on/"
+        }
+      },
+      {
+        "data": {
+          "id": "1ghi67",
+          "title": "How many extension leads is too many extension leads?",
+          "author": "access_self_storage",
+          "subreddit": "aww",
+          "created_utc": 1789503249,
+          "ups": 102,
+          "num_comments": 72,
+          "thumbnail": "/mock/thumb.svg",
+          "permalink": "/r/aww/comments/1ghi67/how_many_extension_leads_is_too_many/"
+        }
+      }
+    ]
+  }
+}
