@@ -1,8 +1,8 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 import { FiArrowUp, FiArrowDown, FiMessageSquare, FiImage } from "react-icons/fi";
 import { formatUps } from "../utils/formatNumbers";
-function PostCard({id, title, author, subreddit, createdAt, ups, numComments, thumbnail, permalink}) {
+function PostCard({ title, author, subreddit, createdAt, ups, numComments, thumbnail, permalink}) {
     
     return (
         <Link to={permalink}>

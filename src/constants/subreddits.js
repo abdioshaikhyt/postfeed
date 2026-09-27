@@ -1,0 +1,1 @@
+export const SUBREDDITS = ['popular', 'worldnews', 'technology', 'gaming', 'movies', 'science', 'sports', 'aww'];
