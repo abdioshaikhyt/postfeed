@@ -1,0 +1,84 @@
+{
+  "data": {
+    "children": [
+      {
+        "data": {
+          "id": "1abc23",
+          "title": "Reddit's JSON API just got a lot friendlier for side projects",
+          "author": "devwatcher",
+          "subreddit": "technology",
+          "created_utc": 1789837749,
+          "ups": 3100,
+          "num_comments": 245,
+          "thumbnail": "/mock/thumb.svg",
+          "permalink": "/r/technology/comments/1abc23/reddits_json_api_just_got_a_lot_friendlier/"
+        }
+      },
+      {
+        "data": {
+          "id": "1ve8qr",
+          "title": "Why your home router probably needs a firmware update",
+          "author": "netnerd42",
+          "subreddit": "technology",
+          "created_utc": 1789842849,
+          "ups": 1300,
+          "num_comments": 185,
+          "thumbnail": "/mock/thumb.svg",
+          "permalink": "/r/technology/comments/1ve8qr/why_your_home_router_probably_needs_a_firmware/"
+        }
+      },
+      {
+        "data": {
+          "id": "1pqr34",
+          "title": "New browser feature blocks trackers by default",
+          "author": "privacynerd",
+          "subreddit": "technology",
+          "created_utc": 1789838949,
+          "ups": 1800,
+          "num_comments": 310,
+          "thumbnail": "/mock/thumb.svg",
+          "permalink": "/r/technology/comments/1pqr34/new_browser_feature_blocks_trackers_by_default/"
+        }
+      },
+      {
+        "data": {
+          "id": "1gdp0g",
+          "title": "Open-source editor hits a million downloads after plugin overhaul",
+          "author": "plugin_pete",
+          "subreddit": "technology",
+          "created_utc": 1789826349,
+          "ups": 2600,
+          "num_comments": 410,
+          "thumbnail": "/mock/thumb.svg",
+          "permalink": "/r/technology/comments/1gdp0g/open_source_editor_hits_a_million_downloads_after/"
+        }
+      },
+      {
+        "data": {
+          "id": "1ue3v1",
+          "title": "Startup demos a battery that charges in under five minutes",
+          "author": "voltfan",
+          "subreddit": "technology",
+          "created_utc": 1789798449,
+          "ups": 4800,
+          "num_comments": 720,
+          "thumbnail": "/mock/thumb.svg",
+          "permalink": "/r/technology/comments/1ue3v1/startup_demos_a_battery_that_charges_in_under/"
+        }
+      },
+      {
+        "data": {
+          "id": "1wdjgk",
+          "title": "Ask r/technology: what's your setup for backing up photos?",
+          "author": "curious_cat_9",
+          "subreddit": "technology",
+          "created_utc": 1789807749,
+          "ups": 950,
+          "num_comments": 640,
+          "thumbnail": null,
+          "permalink": "/r/technology/comments/1wdjgk/ask_r_technology_what_s_your_setup_for/"
+        }
+      }
+    ]
+  }
+}
