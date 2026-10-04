@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const REDDIT_BASE = 'https://www.reddit.com';
 const initialState = {
     ids: [],
     items: {},
@@ -11,8 +10,8 @@ const initialState = {
 };
 
 // no auth — reddit's .json trick works on any subreddit/sort URL
-export const fetchPosts = createAsyncThunk('posts/fetchPosts', async({subreddit, sort }) => {
-    const response = await fetch(`https://corsproxy.io/?url=${REDDIT_BASE}/r/${subreddit}/${sort}.json`);
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async({subreddit, sort}) => {
+    const response = await fetch(`/mock/r/${subreddit}/${sort}.json`);
     if(!response.ok) {
         throw new Error(`Request failed with status ${response.status}`);
     }
@@ -72,6 +71,8 @@ const postsSlice = createSlice({
         })
         builder.addCase(fetchPosts.fulfilled, (state, action) => {
             state.status = 'succeeded';
+            state.ids = [];
+            state.items = {};
             action.payload.data.children.forEach((child) => {
                 const normalizedObject = normalizePost(child.data);
                 state.items[normalizedObject.id] = normalizedObject;
