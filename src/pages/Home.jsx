@@ -5,6 +5,8 @@ import PostCard from '../components/PostCard.jsx';
 import { useParams } from 'react-router-dom';
 import { SUBREDDITS } from "../constants/subreddits.js";
 import Sidebar from "../components/SideBar.jsx";
+import Sortbar from "../components/SortBar.jsx";
+import { SORTS } from "../constants/sorts.js";
 
 function Home() {
     const dispatch = useDispatch();
@@ -29,6 +31,7 @@ function Home() {
 return  (
     <>
     <Sidebar subreddits={SUBREDDITS} />
+    <Sortbar sorts = {SORTS}/>
     {content}
     </>
 )
