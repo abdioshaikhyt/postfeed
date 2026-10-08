@@ -20,7 +20,7 @@ function PostCard({ title, author, subreddit, createdAt, ups, numComments, thumb
             </div>
                
             <div>
-                {thumbnail ? <img src={thumbnail} alt={title}/> : <FiImage aria-hidden="true"></FiImage>}  
+                {thumbnail ? <img src={thumbnail} alt={title} loading="lazy"/> : <FiImage aria-hidden="true"></FiImage>}
             </div>
             <div>
                 <p>{`r/${subreddit} · u/${author} · ${createdAt}`}</p>
