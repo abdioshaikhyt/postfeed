@@ -1,0 +1,1 @@
+export const SORTS = ['hot', 'new', 'top', 'rising'];
