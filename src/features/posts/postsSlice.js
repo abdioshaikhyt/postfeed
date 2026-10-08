@@ -1,23 +1,39 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+// one cache entry per subreddit/sort combo so switching back to a listing we've
+// already fetched doesn't refire the request
+const makeCacheKey = (subreddit, sort) => `${subreddit}/${sort}`;
+
 const initialState = {
     ids: [],
     items: {},
     status: 'idle',
     error: null,
     currentSubreddit: 'popular',
-    currentSort: 'hot'
+    currentSort: 'hot',
+    cache: {} // { 'subreddit/sort': { ids, items } }
 };
 
 // no auth — reddit's .json trick works on any subreddit/sort URL
-export const fetchPosts = createAsyncThunk('posts/fetchPosts', async({subreddit, sort}) => {
-    const response = await fetch(`/mock/r/${subreddit}/${sort}.json`);
-    if(!response.ok) {
-        throw new Error(`Request failed with status ${response.status}`);
+export const fetchPosts = createAsyncThunk(
+    'posts/fetchPosts',
+    async({subreddit, sort}) => {
+        const response = await fetch(`/mock/r/${subreddit}/${sort}.json`);
+        if(!response.ok) {
+            throw new Error(`Request failed with status ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+    },
+    {
+        // skip the request entirely when this subreddit/sort is already cached —
+        // KAN-13: avoid redundant fetches when switching back to a listing we have
+        condition: ({subreddit, sort}, {getState}) => {
+            const cacheKey = makeCacheKey(subreddit, sort);
+            return !getState().posts.cache[cacheKey];
+        }
     }
-    const data = await response.json();
-    return data;
-})
+)
 
 const formatTimeAgo = timeStamp => {
     const dateNowInSeconds = Date.now()/1000;
@@ -54,7 +70,21 @@ const postsSlice = createSlice({
     name: 'posts',
     initialState,
     reducers: {
-
+        // fetchPosts' `condition` skips pending/fulfilled/rejected entirely on a cache
+        // hit, so Home.jsx dispatches this instead to load the cached ids/items
+        // straight into the active view — same state shape fulfilled leaves behind
+        loadFromCache: (state, action) => {
+            const {subreddit, sort} = action.payload;
+            const cacheKey = makeCacheKey(subreddit, sort);
+            const cached = state.cache[cacheKey];
+            if(!cached) return;
+            state.status = 'succeeded';
+            state.error = null;
+            state.currentSubreddit = subreddit;
+            state.currentSort = sort;
+            state.ids = cached.ids;
+            state.items = cached.items;
+        }
     },
 
     extraReducers: (builder) => {
@@ -78,8 +108,16 @@ const postsSlice = createSlice({
                 state.items[normalizedObject.id] = normalizedObject;
                 state.ids.push(normalizedObject.id);
             });
+            // cache this listing so switching back to it skips the fetch (KAN-13)
+            const {subreddit, sort} = action.meta.arg;
+            state.cache[makeCacheKey(subreddit, sort)] = {
+                ids: state.ids,
+                items: state.items
+            };
         })
     }
 })
+
+export const {loadFromCache} = postsSlice.actions;
 
 export default postsSlice.reducer;
