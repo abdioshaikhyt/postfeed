@@ -2,7 +2,7 @@
 
 A Reddit client built with React and Redux Toolkit — a Codecademy Front-End Engineer Career Path portfolio project, built as a 3-person group project.
 
-**Live site:** [posfteed-reddit.netlify.app](https://posfteed-reddit.netlify.app) *(update this link once your first real deploy is live)*
+**Live site:** [posfteed-reddit.netlify.app](https://posfteed-reddit.netlify.app) 
 
 ---
 
