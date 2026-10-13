@@ -2,12 +2,13 @@
 import { Link } from "react-router-dom";
 import { FiArrowUp, FiArrowDown, FiMessageSquare, FiImage } from "react-icons/fi";
 import { formatUps } from "../utils/formatNumbers";
+import styles from './PostCard.module.css';
 function PostCard({ title, author, subreddit, createdAt, ups, numComments, thumbnail, permalink}) {
     
     return (
         <Link to={permalink}>
-        <article>
-            <div>
+        <article className={styles['article-container']}>
+            <div className={styles.vote}>
             <span className="vote-btn-up">
                 <FiArrowUp aria-hidden="true"></FiArrowUp>
             </span>
@@ -19,8 +20,8 @@ function PostCard({ title, author, subreddit, createdAt, ups, numComments, thumb
             </span>
             </div>
                
-            <div>
-                {thumbnail ? <img src={thumbnail} alt={title} loading="lazy"/> : <FiImage aria-hidden="true"></FiImage>}
+            <div className= {styles['img-container']}>
+                {thumbnail ? <img src={thumbnail} alt={title} loading="lazy" className={styles.thumbnail}/> : <FiImage aria-hidden="true" className={styles['FI-Image']}></FiImage>}
             </div>
             <div>
                 <p>{`r/${subreddit} · u/${author} · ${createdAt}`}</p>

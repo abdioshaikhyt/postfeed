@@ -1,0 +1,25 @@
+:root {
+--card-bg: #ffffff;	
+
+
+--card-border:#e5e4e7;
+
+
+--card-title:#08060d;
+
+
+--card-muted:#6b6375;
+
+
+--card-img-bg:#f4f3ec;	
+	
+} 
+@media (prefers-color-scheme: dark) {
+  :root { 
+    --card-bg:#1f2028;
+     --card-border: #2e303a;
+     --card-title: #f3f4f6;
+     --card-muted: #9ca3af;
+     --card-img-bg: #2a2b36;
+   }
+}

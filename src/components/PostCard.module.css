@@ -1,0 +1,35 @@
+.article-container {
+    display: grid;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    grid-template-columns: 34px 90px 1fr;
+    gap: 10px;
+    padding: 1.2rem;
+    text-align: left;
+}
+.thumbnail {
+    height:90px;
+    width: 90px;
+    object-fit: cover;
+    
+}
+
+.img-container {
+    height: 90px;
+    width: 90px;
+    background-color: var(--card-img-bg);
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vote {
+    align-self: center;
+    justify-self: center;
+}
+.FI-Image {
+    font-size: 45px;
+}
+
