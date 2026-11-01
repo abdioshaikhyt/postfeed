@@ -6,6 +6,7 @@
     gap: 10px;
     padding: 1.2rem;
     text-align: left;
+    
 }
 .thumbnail {
     height:90px;
@@ -33,3 +34,17 @@
     font-size: 45px;
 }
 
+.link {
+    text-decoration: none;
+    color: var(--card-title);
+
+}
+
+.metadata {
+    color: var(--card-muted);
+
+}
+
+.comments {
+    color: var(--card-muted);
+}

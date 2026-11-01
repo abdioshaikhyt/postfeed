@@ -6,7 +6,7 @@ import styles from './PostCard.module.css';
 function PostCard({ title, author, subreddit, createdAt, ups, numComments, thumbnail, permalink}) {
     
     return (
-        <Link to={permalink}>
+        <Link to={permalink} className={styles.link}>
         <article className={styles['article-container']}>
             <div className={styles.vote}>
             <span className="vote-btn-up">
@@ -24,9 +24,9 @@ function PostCard({ title, author, subreddit, createdAt, ups, numComments, thumb
                 {thumbnail ? <img src={thumbnail} alt={title} loading="lazy" className={styles.thumbnail}/> : <FiImage aria-hidden="true" className={styles['FI-Image']}></FiImage>}
             </div>
             <div>
-                <p>{`r/${subreddit} · u/${author} · ${createdAt}`}</p>
+                <p className={styles.metadata}>{`r/${subreddit} · u/${author} · ${createdAt}`}</p>
                 <h3>{title}</h3>
-                <p><span><FiMessageSquare aria-hidden="true"></FiMessageSquare></span> {numComments === 1 ? `${formatUps(numComments)} comment`: `${formatUps(numComments)} comments` }</p>
+                <p className={styles.comments}><span><FiMessageSquare aria-hidden="true"></FiMessageSquare></span> {numComments === 1 ? `${formatUps(numComments)} comment`: `${formatUps(numComments)} comments` }</p>
             </div>
         </article>
         </Link>
